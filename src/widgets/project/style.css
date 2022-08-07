@@ -5,6 +5,12 @@
   background-color: #2E6DE1;
   border-radius: 12px;
   padding: 30px 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.project:hover {
+  background-color: #4273c1;
 }
 .project .project-header .header-title {
   width: 180px;
@@ -16,6 +22,13 @@
   background-color: rgba(255, 255, 255, 0);
   border: 0;
   cursor: pointer;
+  line-height: 0;
+  border-radius: 6px;
+  padding: 3px;
+  transition: all 0.1s ease;
+}
+.project .project-header .header-button:hover {
+  background-color: #333333;
 }
 .project .progress {
   margin-top: 22px;
@@ -66,6 +79,9 @@
   width: 30px;
   margin-left: -8px;
   height: 30px;
+}
+.project .members .members-users .members-avatar:focus {
+  background-color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */

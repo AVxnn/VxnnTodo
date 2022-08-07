@@ -3,12 +3,13 @@ import dots from './img/dots.png'
 import avatar from '../headerProfile/img/avatar.png'
 import './style.css'
 
-const Project = () => {
+
+const Project = ({title, members, progress}) => {
   return (
     <>
       <section className='project'>
         <section className='project-header'>
-          <h3 className='header-title'>Vxnn Peterburgs Front end</h3>
+          <h3 className='header-title'>{title}</h3>
           <button className='header-button'>
             <img className='button-img' src={dots} alt="settings"/>
           </button>
@@ -16,10 +17,10 @@ const Project = () => {
         <section className='progress'>
           <section className='progress-header'>
             <span className='progress-title'>Progress</span>
-            <span className='progress-proz'>49%</span>
+            <span className='progress-proz'>{progress}%</span>
           </section>
           <section className='progress-down'>
-            <section className='progress-up'></section>
+            <section className='progress-up' style={{width: `${progress}%`}}></section>
           </section>
         </section>
         <section className='members'>

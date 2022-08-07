@@ -2,6 +2,14 @@ import React from 'react';
 import './style.css'
 import Project from "../project/project";
 
+const data = [
+  {
+    title: "Vxnn Peterburgs Front end",
+    progress: 45,
+    members: [52354623, 243646, 232362351]
+  }
+]
+
 const Projects = () => {
   return (
     <>
@@ -13,8 +21,12 @@ const Projects = () => {
           </section>
           <button className='project-right-button'>+ Add</button>
         </section>
-        <section>
-          <Project />
+        <section className='projects'>
+          {
+            data.map((e) => (
+              <Project title={e.title} progress={e.progress} members={e.members}/>
+            ))
+          }
         </section>
       </section>
     </>

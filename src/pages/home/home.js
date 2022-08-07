@@ -3,6 +3,7 @@ import HeaderProfile from "../../widgets/headerProfile/HeaderProfile";
 import './style.css'
 import Search from "../../widgets/search/search";
 import Projects from "../../widgets/projects/Projects";
+import Tasks from "../../widgets/tasks/tasks";
 
 const Home = () => {
 
@@ -12,6 +13,7 @@ const Home = () => {
         <HeaderProfile />
         <Search />
         <Projects />
+        <Tasks />
       </section>
     </div>
   );

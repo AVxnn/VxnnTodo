@@ -1,0 +1,87 @@
+.tasks-bg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: flex;
+  margin-top: 6px;
+  justify-content: center;
+  background-color: #F2F2F2;
+}
+.tasks-bg .tasks-container {
+  margin-top: 18px;
+  width: 334px;
+}
+.tasks-bg .tasks-container .tasks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tasks-bg .tasks-container .tasks-header .tasks-left .header-title {
+  font-size: 24px;
+  color: #333333;
+  font-weight: 700;
+}
+.tasks-bg .tasks-container .tasks-header .tasks-left .header-subtitle {
+  color: #BDBDBD;
+  font-size: 12px;
+  font-weight: 700;
+}
+.tasks-bg .tasks-container .tasks-header .tasks-left .header-subtitle .subtitle-number {
+  color: #437ED8;
+}
+.tasks-bg .tasks-container .tasks-header .tasks-right-button {
+  color: #437ED8;
+  font-weight: 700;
+  height: 12px;
+  background-color: rgba(205, 220, 248, 0.8);
+  border: 0;
+  box-sizing: initial;
+  padding: 10px 14px;
+  line-height: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.tasks-bg .tasks-list {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.tasks-bg .tasks-list .list-item {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+}
+.tasks-bg .tasks-list .list-item .item-header {
+  display: flex;
+  padding: 17px 20px;
+  justify-content: space-between;
+}
+.tasks-bg .tasks-list .list-item .item-check_label {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #E0E0E0;
+  border-radius: 50px;
+}
+.tasks-bg .tasks-list .list-item .header-left {
+  display: flex;
+  flex-direction: column;
+}
+.tasks-bg .tasks-list .list-item .header-left .header-title {
+  color: #333333;
+  font-size: 16px;
+}
+.tasks-bg .tasks-list .list-item .header-left .header-subtitle {
+  font-size: 10px;
+  font-weight: 400;
+  color: #BDBDBD;
+}
+.tasks-bg .tasks-list .list-item .header-left .item-check {
+  display: none;
+}
+.tasks-bg .tasks-list .list-item .header-left .item-check:checked + .item-check_label {
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

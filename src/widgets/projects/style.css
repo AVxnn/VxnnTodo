@@ -32,5 +32,16 @@
   border-radius: 8px;
   cursor: pointer;
 }
+.project-container .projects {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.project-container .projects::-webkit-scrollbar {
+  width: 0;
+}
+.project-container .projects::-webkit-scrollbar {
+  width: 0;
+}
 
 /*# sourceMappingURL=style.css.map */

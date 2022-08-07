@@ -1,0 +1,94 @@
+
+
+.tasks-bg
+  position: absolute
+  left: 0
+  width: 100%
+  display: flex
+  margin-top: 6px
+  justify-content: center
+  background-color: #F2F2F2
+
+  .tasks-container
+    margin-top: 18px
+    width: 334px
+
+    .tasks-header
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      .tasks-left
+
+        .header-title
+          font-size: 24px
+          color: #333333
+          font-weight: 700
+
+        .header-subtitle
+          color: #BDBDBD
+          font-size: 12px
+          font-weight: 700
+
+          .subtitle-number
+            color: #437ED8
+
+      .tasks-right-button
+        color: #437ED8
+        font-weight: 700
+        height: 12px
+        background-color: #CDDCF8CC
+        border: 0
+        box-sizing: initial
+        padding: 10px 14px
+        line-height: 0
+        border-radius: 8px
+        cursor: pointer
+
+
+  .tasks-list
+    margin-top: 20px
+    width: 100%
+    display: flex
+    flex-direction: column
+    box-sizing: border-box
+
+    .list-item
+      width: 100%
+      background-color: #FFFFFF
+      border-radius: 12px
+
+      .item-header
+        display: flex
+        padding: 17px 20px
+        justify-content: space-between
+
+      .item-check_label
+        width: 40px
+        height: 40px
+        border: 1px solid #E0E0E0
+        border-radius: 50px
+
+      .header-left
+        display: flex
+        flex-direction: column
+
+
+        .header-title
+          color: #333333
+          font-size: 16px
+
+        .header-subtitle
+          font-size: 10px
+          font-weight: 400
+          color: #BDBDBD
+
+        .item-check
+          display: none
+
+        .item-check:checked + .item-check_label
+          background-color: red
+
+      .item-footer
+
+        .footer-date
