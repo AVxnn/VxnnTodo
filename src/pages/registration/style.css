@@ -1,0 +1,74 @@
+.content-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.content-container .content {
+  padding: 20px;
+  width: 100%;
+}
+.content-container .content .title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.content-container .content .reg {
+  color: #828282;
+}
+.content-container .content .link {
+  color: #000000;
+  text-decoration: none;
+}
+.content-container .content .error {
+  position: absolute;
+  color: #EB5757;
+}
+.content-container .content .status {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 6px;
+}
+.content-container .content .status .dash {
+  width: 33.3333%;
+  height: 6px;
+  background-color: #E0E0E0;
+  border-radius: 3px;
+  margin-right: 6px;
+}
+.content-container .content .status .dash_green {
+  background-color: #43D864;
+}
+.content-container .content .status .dash_yellow {
+  background-color: #D89343;
+}
+.content-container .content .status .dash:last-child {
+  margin-right: 0;
+}
+.content-container .content .status .dash_red {
+  background-color: #D84343;
+}
+.content-container .content .label {
+  display: flex;
+  position: relative;
+  margin-bottom: 16px;
+  width: 100%;
+}
+.content-container .content .label .text-input {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+.content-container .content .label .input {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px 20px;
+  border: 2px solid #E0E0E0;
+  border-radius: 12px;
+  outline: none;
+}
+
+.button {
+  margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

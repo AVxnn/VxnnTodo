@@ -1,0 +1,50 @@
+
+.main
+  width: 100%
+  overflow: hidden
+
+  .img-container
+    width: 100% * 4
+    display: flex
+    min-height: 10vh
+    max-height: 50vh
+    transition: all 0.4s ease-in-out
+
+    .img
+      min-width: 120px
+      width: 100%
+      object-fit: cover
+
+  .content
+    position: relative
+    padding: 32px 20px
+
+    .title
+      height: 54px
+      font-size: 24px
+      margin-bottom: 10px
+
+    .dash-container
+      display: flex
+      margin-bottom: 16px
+
+      .dash
+        width: 46px
+        height: 3px
+        background-color: #E5E5E5
+        margin-right: 6px
+        border-radius: 12px
+
+      .dash_fill
+        background-color: #262626
+        transition: all 0.4s ease-in-out
+
+    .subtitle
+      font-size: 14px
+      width: 90%
+      color: #828282
+
+@media screen and (max-height: 675px)
+
+  .img-container
+    max-height: 40vh !important

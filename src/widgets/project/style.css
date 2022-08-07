@@ -1,0 +1,71 @@
+.project {
+  margin-top: 20px;
+  width: 233px;
+  height: 150px;
+  background-color: #2E6DE1;
+  border-radius: 12px;
+  padding: 30px 20px;
+}
+.project .project-header .header-title {
+  width: 180px;
+  font-size: 20px;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.project .project-header .header-button {
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+  cursor: pointer;
+}
+.project .progress {
+  margin-top: 22px;
+}
+.project .progress .progress-header {
+  display: flex;
+  margin-bottom: 4px;
+  justify-content: space-between;
+}
+.project .progress .progress-header .progress-title {
+  color: #CDCDCD;
+  font-size: 10px;
+}
+.project .progress .progress-header .progress-proz {
+  color: #CDCDCD;
+  font-size: 12px;
+}
+.project .progress .progress-down {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.3019607843);
+}
+.project .progress .progress-down .progress-up {
+  position: absolute;
+  width: 46%;
+  height: 6px;
+  border-radius: 50px;
+  background-color: #FFFFFF;
+}
+.project .members {
+  margin-top: 10px;
+}
+.project .members .members-header .members-title {
+  color: #CDCDCD;
+  font-size: 10px;
+}
+.project .members .members-users {
+  margin-top: 4px;
+}
+.project .members .members-users .members-avatar:first-child {
+  width: 30px;
+  height: 30px;
+  margin-left: 0;
+}
+.project .members .members-users .members-avatar {
+  width: 30px;
+  margin-left: -8px;
+  height: 30px;
+}
+
+/*# sourceMappingURL=style.css.map */

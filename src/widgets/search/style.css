@@ -1,0 +1,27 @@
+.search-container {
+  margin-top: 30px;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  display: flex;
+}
+.search-container .search-img {
+  position: absolute;
+  width: 24px;
+  margin-left: 12px;
+  height: 24px;
+}
+.search-container .search {
+  width: 100%;
+  height: 46px;
+  border: 2px solid #E0E0E0;
+  color: #BDBDBD;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 15px 0 15px 42px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  outline: none;
+}
+
+/*# sourceMappingURL=style.css.map */
