@@ -31,25 +31,27 @@ const Started = () => {
   return scrollInfo ? (
     <>
       <main className='main'>
-        <section className='img-container' style={{marginLeft: `-${100 * scrollInfo}%`}}>
-          <img className='img' src={firstImg} alt="firstImg"/>
-          <img className='img' src={firstImg} alt="firstImg"/>
-          <img className='img' src={secondImg} alt="secondImg"/>
-          <img className='img' src={thirtyImg} alt="thirtyImg"/>
-        </section>
-        <section className='content'>
-          <h1 className='title'>{data[scrollInfo - 1].title}</h1>
-          <section className='dash-container'>
-            <div className='dash dash_fill'></div><div className={`dash ${scrollInfo >= 2 ? 'dash_fill' : ''}`}></div><div className={`dash ${scrollInfo >= 3 ? 'dash_fill' : ''}`}></div>
+        <section className='main-container'>
+          <section className='img-container' style={{marginLeft: `-${100 * scrollInfo}%`}}>
+            <img className='img' src={firstImg} alt="firstImg"/>
+            <img className='img' src={firstImg} alt="firstImg"/>
+            <img className='img' src={secondImg} alt="secondImg"/>
+            <img className='img' src={thirtyImg} alt="thirtyImg"/>
           </section>
-          <p className='subtitle'>{data[scrollInfo - 1].subtitle}</p>
-          {
-            scrollInfo !== 3 ? (
-              <Button click={changeStep}>Next</Button>
-            ) : (
-              <Button click={navigator}>Registration</Button>
-            )
-          }
+          <section className='content'>
+            <h1 className='title'>{data[scrollInfo - 1].title}</h1>
+            <section className='dash-container'>
+              <div className='dash dash_fill'></div><div className={`dash ${scrollInfo >= 2 ? 'dash_fill' : ''}`}></div><div className={`dash ${scrollInfo >= 3 ? 'dash_fill' : ''}`}></div>
+            </section>
+            <p className='subtitle'>{data[scrollInfo - 1].subtitle}</p>
+            {
+              scrollInfo !== 3 ? (
+                <Button click={changeStep}>Next</Button>
+              ) : (
+                <Button click={navigator}>Registration</Button>
+              )
+            }
+          </section>
         </section>
       </main>
     </>

@@ -62,6 +62,37 @@
         display: flex
         padding: 17px 20px
         justify-content: space-between
+        border-bottom: 1px solid #E0E0E0
+
+        label
+          display: block
+          cursor: pointer
+          width: 20px
+          height: 20px
+          position: relative
+          font-size: 13px
+
+        label:before
+          content: ""
+          display: inline-block
+          width: 20px
+          height: 20px
+          position: absolute
+          border-radius: 50px
+          left: 0
+          border: 1px solid #E0E0E0
+
+        input[type=checkbox]
+          display: none
+
+        .checkbox label:before
+          border-radius: 3px
+
+        input[type=checkbox]:checked + label:before
+          content: "\2713"
+          text-align: center
+          color: #FFFFFF
+          background-color: #437ED8
 
       .item-check_label
         width: 40px
@@ -83,12 +114,9 @@
           font-weight: 400
           color: #BDBDBD
 
-        .item-check
-          display: none
-
-        .item-check:checked + .item-check_label
-          background-color: red
-
       .item-footer
+        padding: 9px 20px
 
         .footer-date
+          font-size: 10px
+          color: #6C6C6C

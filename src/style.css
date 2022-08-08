@@ -11,4 +11,10 @@ body {
   user-select: none;
 }
 
+.btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  outline: none;
+}
+
 /*# sourceMappingURL=style.css.map */

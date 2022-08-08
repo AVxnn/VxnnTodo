@@ -15,7 +15,6 @@ const Tasks = () => {
             <button className='tasks-right-button'>+ New Task</button>
           </section>
           <section>
-
           </section>
           <section className='tasks-list'>
             <section className='list-item'>
@@ -24,10 +23,10 @@ const Tasks = () => {
                   <h3 className='header-title'>Write a new task</h3>
                   <span className='header-subtitle'>Vxnn Peterburgs Front end</span>
                 </section>
-                <input id='check' className='item-check' type="checkbox"/>
-                <label htmlFor="check">
-                  <div className='item-check_label'></div>
-                </label>
+                <div className='checkbox-box'>
+                  <input className='input-check' type="checkbox" value="None" id="roundedOne" name="check"/>
+                  <label htmlFor="roundedOne"></label>
+                </div>
               </section>
               <section className='item-footer'>
                 <span className='footer-date'>today</span>

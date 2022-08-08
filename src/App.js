@@ -5,6 +5,7 @@ import Registration from "./pages/registration/registration";
 import { app } from './features/firebase/firebase'
 import Login from "./pages/login/login";
 import Home from "./pages/home/home";
+import Settings from "./pages/settings/settings";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </>
   );

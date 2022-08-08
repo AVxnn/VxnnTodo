@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .tasks-bg {
   position: absolute;
   left: 0;
@@ -57,6 +58,37 @@
   display: flex;
   padding: 17px 20px;
   justify-content: space-between;
+  border-bottom: 1px solid #E0E0E0;
+}
+.tasks-bg .tasks-list .list-item .item-header label {
+  display: block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  font-size: 13px;
+}
+.tasks-bg .tasks-list .list-item .item-header label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50px;
+  left: 0;
+  border: 1px solid #E0E0E0;
+}
+.tasks-bg .tasks-list .list-item .item-header input[type=checkbox] {
+  display: none;
+}
+.tasks-bg .tasks-list .list-item .item-header .checkbox label:before {
+  border-radius: 3px;
+}
+.tasks-bg .tasks-list .list-item .item-header input[type=checkbox]:checked + label:before {
+  content: "✓";
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #437ED8;
 }
 .tasks-bg .tasks-list .list-item .item-check_label {
   width: 40px;
@@ -77,11 +109,12 @@
   font-weight: 400;
   color: #BDBDBD;
 }
-.tasks-bg .tasks-list .list-item .header-left .item-check {
-  display: none;
+.tasks-bg .tasks-list .list-item .item-footer {
+  padding: 9px 20px;
 }
-.tasks-bg .tasks-list .list-item .header-left .item-check:checked + .item-check_label {
-  background-color: red;
+.tasks-bg .tasks-list .list-item .item-footer .footer-date {
+  font-size: 10px;
+  color: #6C6C6C;
 }
 
 /*# sourceMappingURL=style.css.map */
