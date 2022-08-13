@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Button from "../../shared/button/button";
+import './style.css'
 import {Link, useNavigate} from "react-router-dom";
 import {signInWithEmailAndPassword, getAuth} from "firebase/auth";
 import {doc, getDoc} from "firebase/firestore";
@@ -44,29 +45,30 @@ const Login = () => {
     const datas = await readDataUser(auth.currentUser.uid)
     console.log(datas)
     dispatch(add(datas))
-    console.log(user)
     localStorage.setItem('user', JSON.stringify(datas))
   }
 
   return (
-    <div className='content-container'>
-      {
-        error ? (
-          <Alert error={error}/>
-        ) : null
-      }
-      <section className='content'>
-        <h2 className='title' >Login</h2>
-        <label className='label' htmlFor="email">
-          <input placeholder='Email' className='input' onChange={(e) => setData({...data, email: e.target.value})} id='email' type="email"/>
-        </label>
-        <label className='label' htmlFor="password">
-          <input placeholder='Password' className='input' onChange={(e) => setData({...data, password: e.target.value})} id='password' type="password"/>
-        </label>
-        <Button click={logChange}>Login</Button>
-        <Link className='link' to='/registration'>Registration</Link>
-      </section>
-    </div>
+    <section className='log'>
+      <div className='content-container'>
+        {
+          error ? (
+            <Alert error={error}/>
+          ) : null
+        }
+        <section className='content'>
+          <h2 className='title' >Login</h2>
+          <label className='label' htmlFor="email">
+            <input placeholder='Email' className='input' onChange={(e) => setData({...data, email: e.target.value})} id='email' type="email"/>
+          </label>
+          <label className='label' htmlFor="password">
+            <input placeholder='Password' className='input' onChange={(e) => setData({...data, password: e.target.value})} id='password' type="password"/>
+          </label>
+          <Button click={logChange}>Login</Button>
+          <Link className='link' to='/registration'>Registration</Link>
+        </section>
+      </div>
+    </section>
   );
 };
 

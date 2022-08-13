@@ -1,0 +1,154 @@
+
+
+
+.main
+  width: 100%
+  height: 100vh
+  display: flex
+  justify-content: center
+
+  .container
+    width: 334px
+
+    .bg-top
+      position: absolute
+      top: 0
+      right: 0
+
+    .bg-bottom
+      position: absolute
+      bottom: 0
+      transform: rotate(180deg)
+      left: 0
+
+    .s-header
+      position: relative
+      display: flex
+      height: 50px
+      justify-content: center
+      margin-top: 40px
+      margin-bottom: 40px
+      align-items: center
+      flex-direction: row
+
+      .s-header-back
+        position: absolute
+        border: 2px solid #437ED8
+        border-radius: 50px
+        left: 0
+        cursor: pointer
+
+        &:hover
+          border: 2px solid #4D8AE4
+
+        &:active
+          border: 2px solid #3566B0
+
+
+
+      .s-header-title
+        color: #437ED8
+        font-size: 20px
+
+    .upload
+      width: 100%
+      height: 160px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+      .upload-label
+        cursor: pointer
+
+        &:hover .upload-img
+          border: 2px solid #437ED8 !important
+
+      .upload-file
+        display: none
+
+      .upload-img
+        width: 130px
+        height: 130px
+        padding: 2px
+        border: 2px dashed #437ED8
+        border-radius: 550px
+        transition: all 0.1s ease
+
+      .upload-container
+        display: flex
+        margin-top: -25px
+        justify-content: center
+        width: 140px
+
+        .upload-btn
+          background-color: #437ED8
+          padding: 10px
+          border-radius: 50px
+          border: 0
+          line-height: 0
+
+          .unpload-btn-img
+
+    .little
+      width: 100%
+      display: flex
+      justify-content: center
+      margin: 30px 0
+      color: #437ED8
+      font-weight: 700
+
+    .setting-form
+      width: 100%
+      z-index: 4
+
+      .form-label
+        width: 100%
+        height: 52px
+        box-sizing: border-box
+        padding: 10px 10px
+        display: flex
+        border: 2px solid #E0E0E0
+        border-radius: 12px
+
+        .form-icon
+          border-right: 2px solid #E0E0E0
+          padding-right: 4px
+
+        .form-content
+          display: flex
+          margin-left: 10px
+          flex-direction: column
+          font-weight: 700
+
+          .form-title
+            font-size: 10px
+            color: #BDBDBD
+
+          .form-input
+            font-size: 14px
+            color: #333333
+            outline: none
+            border: 0
+            padding: 2px 0
+            background-color: rgba(0, 0, 0, 0)
+
+      .form-button
+        width: 100%
+        background-color: #437ED8
+        color: #FFFFFF
+        border: 0
+        outline: none
+        height: 52px
+        font-size: 14px
+        border-radius: 12px
+        font-weight: 700
+        margin-top: 60px
+        cursor: pointer
+        transition: all 0.1s ease
+
+        &:hover
+          background-color: #4D8AE4
+
+        &:active
+          background-color: #3566B0

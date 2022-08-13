@@ -3,7 +3,8 @@
   overflow: hidden;
 }
 .main .main-container {
-  width: 100%;
+  width: 334px;
+  overflow: hidden;
 }
 .main .main-container .img-container {
   width: 400%;

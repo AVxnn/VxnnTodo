@@ -1,6 +1,13 @@
+.reg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .content-container {
   height: 100vh;
   display: flex;
+  width: 334px;
   align-items: center;
 }
 .content-container .content {

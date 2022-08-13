@@ -3,14 +3,15 @@ import avatar from "./img/avatar.png";
 import cog from "./img/cog.png";
 import bell from "./img/bell.png";
 import {useSelector} from "react-redux";
-import {getAuth} from "firebase/auth";
+import {getAuth, signOut} from "firebase/auth";
 import './style.css'
 import {useNavigate} from "react-router-dom";
+
 
 const HeaderProfile = () => {
 
   const user = useSelector(state => state.user.user)
-  const auth = getAuth().currentUser
+  const auth = getAuth()
 
   const [openMenu, setOpenMenu] = useState(false)
 
@@ -25,6 +26,9 @@ const HeaderProfile = () => {
   }
 
   const exit = () => {
+    signOut(auth).then(() => {
+
+    })
     navigate('/login')
   }
 
@@ -34,13 +38,7 @@ const HeaderProfile = () => {
         { auth ? (
           <>
             <section className='header-left'>
-              {
-                user.photoUrl ? (
-                  <img className='header-avatar' src="#" alt="avatar"/>
-                ) : (
-                  <img className='header-avatar' src={avatar} alt="avatar"/>
-                )
-              }
+                  <img className='header-avatar' src={avatar && user.avatar} alt="avatar"/>
               <section className='header-info'>
                 <h4 className='header-title'>{user.name}</h4>
                 <span className='header-subtitle'>Morning, {user.name}!</span>

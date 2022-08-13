@@ -6,37 +6,32 @@ import { collection, query, where, onSnapshot } from "firebase/firestore";
 import Empty from "../empty/empty";
 import {db} from "../../features/firebase/firebase";
 
-const data = [
-  {
-    title: "Vxnn Peterburgs Front end",
-    progress: 45,
-    members: [52354623, 243646, 232362351]
-  }
-]
-
 const Projects = () => {
 
   const [popup, setPopup] = useState(false)
   const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const addProject = () => {
     popup ? setPopup(false) : setPopup(true)
   }
 
   useEffect(() => {
+    setLoading(true)
     const q = query(collection(db, "projects")); // where("state", "==", "CA")
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const cities = [];
+      const projects = [];
       querySnapshot.forEach((doc) => {
-        cities.push(doc.data());
+        projects.push(doc.data());
       });
-      console.log("Current cities in CA: ", cities);
-      setData(cities)
+      console.log("projects", projects);
+      setData(projects)
+      setLoading(false)
     });
     return () => unsubscribe()
   }, [])
 
-  return (
+  return data && (
     <>
       {
         popup && <Popup setPopup={setPopup} />
@@ -45,12 +40,13 @@ const Projects = () => {
         <section className='project-header'>
           <section className='project-left'>
             <h2 className='header-title'>Projects</h2>
-            <span className='header-subtitle'>You have <span className='subtitle-number'>4</span> Projects</span>
+            <span className='header-subtitle'>You have <span className='subtitle-number'>{loading ? `~` :  data.length}</span> Projects</span>
           </section>
           <button onClick={() => addProject()} className='project-right-button'>+ Add</button>
         </section>
         <section className='projects'>
           {
+            loading ? '' :
             data.length > 0 ? data.map((e) => (
               <Project data={e}/>
             )) : <Empty />

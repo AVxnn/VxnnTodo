@@ -14,6 +14,8 @@ const Popup = ({setPopup}) => {
     uCreate: user.uid
   })
 
+  console.log(user)
+
   const closePopup = (e) => {
     e.stopPropagation();
     if(e.target.localName === 'div') {
@@ -29,8 +31,11 @@ const Popup = ({setPopup}) => {
       name: project.name,
       color: project.color,
       uid: user.uid,
+      progress: 0,
       members: [{
+        name: user.name,
         uid: user.uid,
+        photoUrl: user.avatar
       }]
     });
     setPopup(false)

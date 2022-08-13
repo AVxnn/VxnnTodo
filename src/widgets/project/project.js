@@ -20,7 +20,7 @@ const Project = ({data}) => {
             <span className='progress-proz'>{data.progress}%</span>
           </section>
           <section className='progress-down'>
-            <section className='progress-up' style={{width: `${data.progress ? data.progress : 0}%`}}></section>
+            <section className='progress-up' style={{width: `${data.progress ? data.progress : '0'} %`}}></section>
           </section>
         </section>
         <section className='members'>
@@ -29,13 +29,9 @@ const Project = ({data}) => {
           </section>
           <section className='members-users'>
             {
-              data.members ? data.members.map((e) => {
-                <img className='members-avatar' src={avatar} alt="avatar"/>
-              }) : (
-                <>
-                  empty
-                </>
-              )
+              data.members ? data.members.map((e) => (
+                <img className='members-avatar' src={e.photoUrl} alt="avatar"/>
+              )) : null
             }
           </section>
         </section>

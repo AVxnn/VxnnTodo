@@ -79,6 +79,7 @@
   width: 30px;
   margin-left: -8px;
   height: 30px;
+  border-radius: 50px;
 }
 .project .members .members-users .members-avatar:focus {
   background-color: #ffffff;

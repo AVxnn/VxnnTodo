@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Button from "../../shared/button/button";
 import './style.css'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import {db} from "../../features/firebase/firebase";
@@ -17,10 +17,12 @@ const Registration = () => {
     password: '',
     uid: '',
   })
+
+  let navigate = useNavigate();
   const auth = getAuth()
 
   let regChange = async () => {
-    if (!data.name || !data.email || !data.password || status >= 1) {
+    if (!data.name || !data.email || !data.password) {
       setError('Вы заполнили не все поля!')
       return setTimeout(() => {
         setError('')
@@ -37,8 +39,11 @@ const Registration = () => {
           name: data.name,
           email: data.email,
           password: data.password,
-          uid: user.uid
+          uid: user.uid,
+          avatar: '',
+          avatarPath: '',
         });
+        navigate('/login')
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -66,50 +71,52 @@ const Registration = () => {
 
   return (
     <>
-      <div className='content-container'>
-        {
-          error ? (
-            <Alert error={error}/>
-          ) : null
-        }
-        <section className='content'>
-          <h2 className='title' >Registration</h2>
-          <label className='label' htmlFor="name">
-            <input placeholder='Name' className='input' onChange={(e) => setData({...data, name: e.target.value})} id='name' type="text"/>
-          </label>
-          <label className='label' htmlFor="email">
-            <input placeholder='Email' className='input' onChange={(e) => setData({...data, email: e.target.value})} id='email' type="email"/>
-          </label>
-          <label className='label' htmlFor="password">
-            <input placeholder='Password' className='input' onChange={(e) => setData({...data, password: e.target.value})} id='password' type="password"/>
-          </label>
-          <section className='status'>
-            {
-              status >= 1 ? status >= 2 ? status === 3 ? (
-                <>
-                  <div className='dash dash_green'></div>
-                  <div className='dash dash_green'></div>
-                  <div className='dash dash_green'></div>
-                </>
-              ) : (
-                <>
-                  <div className='dash dash_yellow'></div>
-                  <div className='dash dash_yellow'></div>
-                  <div className='dash'></div>
-                </>
-              ) : (
-                <>
-                  <div className='dash dash_red'></div>
-                  <div className='dash'></div>
-                  <div className='dash'></div>
-                </>
-              )  : null
-            }
+      <section className='reg'>
+        <div className='content-container'>
+          {
+            error ? (
+              <Alert error={error}/>
+            ) : null
+          }
+          <section className='content'>
+            <h2 className='title' >Registration</h2>
+            <label className='label' htmlFor="name">
+              <input placeholder='Name' className='input' onChange={(e) => setData({...data, name: e.target.value})} id='name' type="text"/>
+            </label>
+            <label className='label' htmlFor="email">
+              <input placeholder='Email' className='input' onChange={(e) => setData({...data, email: e.target.value})} id='email' type="email"/>
+            </label>
+            <label className='label' htmlFor="password">
+              <input placeholder='Password' className='input' onChange={(e) => setData({...data, password: e.target.value})} id='password' type="password"/>
+            </label>
+            <section className='status'>
+              {
+                status >= 1 ? status >= 2 ? status === 3 ? (
+                  <>
+                    <div className='dash dash_green'></div>
+                    <div className='dash dash_green'></div>
+                    <div className='dash dash_green'></div>
+                  </>
+                ) : (
+                  <>
+                    <div className='dash dash_yellow'></div>
+                    <div className='dash dash_yellow'></div>
+                    <div className='dash'></div>
+                  </>
+                ) : (
+                  <>
+                    <div className='dash dash_red'></div>
+                    <div className='dash'></div>
+                    <div className='dash'></div>
+                  </>
+                )  : null
+              }
+            </section>
+            <Button click={regChange}>Registration</Button>
+            <span className='reg'>Уже зарегистрированы? <Link className='link' to='/login'>Login</Link></span>
           </section>
-          <Button click={regChange}>Registration</Button>
-          <span className='reg'>Уже зарегистрированы? <Link className='link' to='/login'>Login</Link></span>
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   );
 };
